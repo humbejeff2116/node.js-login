@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+
+
+<%- include('header') %> 
+
+   <% if((currentUser) && (currentUser.id === user.id)){ %> 
+
+    <a href="/users/edit" class="pull-right">Edit your profile</a>
+
+   <% }  %>
+<h1> <%= user.displayName() %></h1>
+
+<h2>joind on <%= user.createdate.toUTCString() %></h2>
+
+<% if(user.bio){ %> 
+    <p><%= user.bio%></p>
+<% } %>
+
+<%- include('_footer') %>

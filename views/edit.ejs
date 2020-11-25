@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+
+
+
+<%- include('header') %>
+
+
+
+<h1 align="center">
+    edit your profile
+</h1>
+<div class="container">
+
+<form action="/users/edit" method="post" enctype="multipart/form-data">
+
+    <input type="text" name="name" placeholder="edit your name" class="form-control"><br />
+   <input name="username" type="text" palceholder=" edit your name" class="form-control" placeholder="edit you username" ><br />
+   <textarea name="bio" placeholder="tell us about yourself"  class="form-control">
+       <%= currentUser.bio %></textarea> 
+   </textarea><br />
+   <input type="submit" value="update"  class="btn btn-primary">
+
+</form>
+</div>
+<%- include('_footer') %>  

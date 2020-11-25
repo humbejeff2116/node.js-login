@@ -1,0 +1,11 @@
+
+
+#ignore dependencies
+/node_modules
+/.pnp
+/.pnp.js
+#ignore build file
+/build
+#ignore error files
+npm-error.log
+npm-debug.log

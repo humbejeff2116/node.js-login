@@ -1,0 +1,79 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            learn about me
+        </title>
+       <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" >
+    </head>
+    <body>
+
+        <div  class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/users">learn about me</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if (currentUser){ %>
+                        <li class="<% title = 'members' ? 'active' : ''  %> ">
+                            <a href="/users/edit">
+                                hello, <%= currentUser.displayName() %>
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a href="/users/logout">
+                                logout
+                            </a>
+                        </li>
+                    <%}else{ %>
+                        <li class="<% title = 'login' ? 'active' : ''  %> ">
+                            <a href="/users/login">
+                                log in
+                            </a>
+                        </li>
+                        <li class="<% title = 'signup' ? 'active' : ''  %> ">
+                            <a href="/users/signup">
+                                sign up
+                            </a>
+                        </li>
+                    <% } %>
+
+                    
+                </ul>
+
+
+            </div>
+            
+        </div>
+
+        <div class="container" >
+         
+                <% errors.forEach(err =>{ %>
+                    <div class="alert alert-danger" role ="alert">
+                        <%= err %>
+                    </div>
+               <% }) %>
+
+           <% valErrors.forEach(err => { %>
+            <div class="alert alert-danger" role ="alert">
+                    <%= err.msg %>
+                </div>
+            <%}) %>
+              
+          
+           <% infos.forEach(info=>{ %>
+                <div class="alert alert-info" role="alert">
+                    <%= info %>
+                </div>
+          <%  }) %>
+        </div>
+
+  
